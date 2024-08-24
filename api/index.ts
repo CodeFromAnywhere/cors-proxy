@@ -6,7 +6,7 @@ const makeHandler = (method: string) => (request: Request) => {
 
   const fullOriginalUrl = "https://google.nl";
 
-  // const result = await fetch(fullOriginalUrl, {
+  // const// result = await fetch(fullOriginalUrl, {
   //   method: request.method,
   //   body: request.body,
   //   //@ts-ignore
