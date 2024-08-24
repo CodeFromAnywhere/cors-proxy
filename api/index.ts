@@ -6,10 +6,9 @@ const makeHandler = () => async (request: Request) => {
   const headers: any = {};
   request.headers.forEach((value, key) => (headers[key] = value));
   console.log(headers);
-  const json = await request.json();
   const fullOriginalUrl = "https://google.nl";
 
-  console.log({ json, method: request.method });
+  console.log({ method: request.method });
   // const// result = await fetch(fullOriginalUrl, {
   //   method: request.method,
   //   body: request.body,
