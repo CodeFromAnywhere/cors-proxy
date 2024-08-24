@@ -1,11 +1,16 @@
-const makeHandler = (method: string) => (request: Request) => {
-  // const url = new URL(request.url);
-  // console.log(url);
-  console.log(request.url);
-  request.headers.forEach((value, key) => console.log(key, value));
+const makeHandler = () => async (request: Request) => {
+  const url = new URL(request.url);
 
+  const api = url.searchParams.get("api");
+  console.log("url", request.url, api);
+
+  const headers: any = {};
+  request.headers.forEach((value, key) => (headers[key] = value));
+  console.log(headers);
+  const json = await request.json();
   const fullOriginalUrl = "https://google.nl";
 
+  console.log({ json, method: request.method });
   // const// result = await fetch(fullOriginalUrl, {
   //   method: request.method,
   //   body: request.body,
@@ -14,12 +19,12 @@ const makeHandler = (method: string) => (request: Request) => {
   //   duplex: "half",
   //   headers: request.headers,
   // });
-  console.log("GOTTT");
+  console.log("GOkkTTT");
   return new Response("World");
 };
 
-export const GET = makeHandler("GET");
-export const POST = makeHandler("POST");
-export const PUT = makeHandler("PUT");
-export const PATCH = makeHandler("PATCH");
-export const DELETE = makeHandler("DELETE");
+export const GET = makeHandler();
+export const POST = makeHandler();
+export const PUT = makeHandler();
+export const PATCH = makeHandler();
+export const DELETE = makeHandler();
