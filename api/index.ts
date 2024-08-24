@@ -14,7 +14,7 @@ const makeHandler = (method: string) => (request: Request) => {
   //   duplex: "half",
   //   headers: request.headers,
   // });
-
+  console.log("GOTTT");
   return new Response("World");
 };
 
