@@ -1,8 +1,7 @@
 const makeHandler = () => async (request: Request) => {
   const url = new URL(request.url);
 
-  const api = url.searchParams.get("api");
-  console.log("url", request.url, api);
+  console.log("url", request.url, url.hash);
 
   const headers: any = {};
   request.headers.forEach((value, key) => (headers[key] = value));
